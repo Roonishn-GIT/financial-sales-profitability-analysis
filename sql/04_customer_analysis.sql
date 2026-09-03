@@ -1,0 +1,7 @@
+-- 04_customer_analysis.sql
+-- Customer-level analysis will include:
+-- revenue and profit by customer
+-- average order value
+-- customer ranking with window functions
+-- revenue/profit concentration
+-- high-revenue versus high-profit customer comparison
