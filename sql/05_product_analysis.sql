@@ -1,0 +1,7 @@
+-- 05_product_analysis.sql
+-- Product/category analysis will include:
+-- revenue, cost, profit, margin and units by product
+-- category-level KPIs
+-- best/worst product ranking
+-- high-revenue low-margin products
+-- contribution to total revenue and profit
