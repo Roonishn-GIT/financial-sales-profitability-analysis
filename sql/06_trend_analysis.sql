@@ -1,0 +1,8 @@
+-- 06_trend_analysis.sql
+-- Time and regional analysis will include:
+-- monthly revenue/profit trends
+-- running totals
+-- LAG-based growth calculations
+-- rolling averages when appropriate
+-- regional ranking and contribution
+-- seasonality checks where the date range supports them
