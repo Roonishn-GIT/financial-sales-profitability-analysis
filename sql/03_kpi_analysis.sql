@@ -1,0 +1,10 @@
+-- 03_kpi_analysis.sql
+-- Core KPI calculations will include:
+-- total revenue
+-- total cost
+-- total profit
+-- profit margin
+-- order/transaction count
+-- units sold
+-- average order value
+-- month-over-month and year-over-year growth where supported by the data
