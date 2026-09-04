@@ -1,14 +1,21 @@
 # Python Analysis
 
-**Status: Next phase — not yet complete.**
+**Status: Complete and validated.**
 
-The `python/scripts/` directory currently contains reusable scaffolding for loading, cleaning, and summarizing the dataset. The full Python/Pandas analysis will be completed after the validated Excel and PostgreSQL controls established on Day 1.
+The Python workflow cleans the source data, validates it against the Day 1 Excel/PostgreSQL controls, performs exploratory profitability analysis, and exports five Matplotlib charts.
 
-Planned work:
+## Scripts
 
-- Reproduce the validated company KPIs.
-- Standardize column names and analytical labels programmatically.
-- Perform descriptive statistics and EDA.
-- Analyze distributions, outliers, correlations, customers, categories, regions, and time trends.
-- Export portfolio-ready Matplotlib visualizations to `visuals/`.
-- Write analysis-ready output to `data/cleaned/` without modifying the raw source file.
+- `python/scripts/clean_data.py` standardizes column names, parses dates, confirms numeric fields, standardizes `Centre` to `Central`, and creates analysis-ready profitability fields.
+- `python/scripts/validate_cleaned_data.py` checks data quality and reconciles the cleaned dataset to the exact Day 1 controls with readable PASS/FAIL output.
+- `python/scripts/analysis.py` calculates overall, yearly, category, regional, customer, monthly, and product-margin results; reconciles key outputs to SQL; and creates the portfolio charts.
+
+## Run from the Repository Root
+
+```bash
+python python/scripts/clean_data.py
+python python/scripts/validate_cleaned_data.py
+python python/scripts/analysis.py
+```
+
+The cleaning script writes the analysis-ready dataset to `data/cleaned/financial_sales_cleaned.csv`. The original file in `data/raw/` is read-only for this workflow and is never modified.

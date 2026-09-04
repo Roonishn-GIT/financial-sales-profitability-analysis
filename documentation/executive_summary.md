@@ -6,7 +6,7 @@ How can management grow revenue while protecting or improving profitability acro
 
 ## Validated KPIs
 
-The Day 1 Excel and PostgreSQL analyses reconcile to the same company-level controls:
+The Day 1 Excel/PostgreSQL analyses and Day 2 Python workflow reconcile to the same company-level controls:
 
 - **200,000** unique transactions/orders
 - **370,800** units sold
@@ -31,8 +31,8 @@ The Day 1 Excel and PostgreSQL analyses reconcile to the same company-level cont
 - Protect Home & Furniture as a major profit engine and investigate which sub-categories can support additional profitable growth.
 - Compare the South region's higher-margin mix with the East region's higher-revenue mix to identify transferable commercial practices.
 - Segment customers using both revenue and profit contribution rather than sales volume alone.
-- Use the Python phase to test outliers, distributions, correlations, and segment behavior before finalizing management recommendations.
+- Use the planned Power BI dashboard to monitor revenue scale, profit contribution, margin efficiency, and product-mix opportunities interactively.
 
 ## Status
 
-This is the validated **Day 1** executive summary. Python statistical analysis and the Power BI dashboard will extend and visualize these findings in the next phases.
+Day 2 is complete and validated. Python independently reproduced the core controls and category/regional findings, then strengthened the product-margin analysis by confirming that high-revenue products below the company margin are concentrated in Electronics. The Power BI dashboard remains planned for Day 3.

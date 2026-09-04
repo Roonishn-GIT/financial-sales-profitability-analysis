@@ -5,7 +5,7 @@ End-to-end financial analytics portfolio project using **Excel, PostgreSQL, Pyth
 ## Project Status
 
 - **Day 1 — Excel + PostgreSQL:** Complete and validated
-- **Day 2 — Python/Pandas:** Next
+- **Day 2 — Python/Pandas:** Complete and validated
 - **Day 3 — Power BI + final portfolio polish:** Planned
 
 The source contains **200,000 unique U.S. retail transactions** covering **2023-01-01 through 2024-12-31**.
@@ -46,7 +46,7 @@ See [`documentation/day1_validation_audit.md`](documentation/day1_validation_aud
 
 - **Excel:** source validation, calculated controls, PivotTables, and initial charts
 - **PostgreSQL / DBeaver:** staging, typed tables, validation, CTEs, window functions, rankings, running totals, moving averages, and trend analysis
-- **Python:** Pandas cleaning, EDA, statistics, and visualization *(next phase)*
+- **Python:** Pandas cleaning, validation, EDA, profitability analysis, and Matplotlib visualizations *(complete)*
 - **Power BI:** DAX measures and executive dashboard *(planned)*
 - **Git/GitHub:** version control, documentation, and portfolio presentation
 
@@ -55,7 +55,8 @@ See [`documentation/day1_validation_audit.md`](documentation/day1_validation_aud
 ```text
 data/
   raw/                 Original source CSV — preserved unchanged
-  cleaned/             Analysis-ready exports created during Python phase
+  cleaned/
+    financial_sales_cleaned.csv  Validated analysis-ready dataset
   data_dictionary.md   Field definitions, validation rules, and derived metrics
 excel/
   financial_sales_analysis.xlsx
@@ -68,11 +69,18 @@ sql/
   05_product_analysis.sql
   06_trend_analysis.sql
 python/
-  scripts/              Python analysis scaffolding and reusable helpers
+  scripts/
+    clean_data.py                  Reproducible cleaning pipeline
+    validate_cleaned_data.py       Day 1 control and quality validation
+    analysis.py                    EDA, reconciliation, and chart generation
 powerbi/                Power BI deliverables
-visuals/                Exported charts and dashboard screenshots
+visuals/                Five Python chart exports; Power BI screenshot planned
 documentation/          Business problem, methodology, findings, audit, and summary
 ```
+
+## Python Day 2
+
+The completed Python workflow provides a reproducible cleaning pipeline, validates the cleaned dataset against the Day 1 Excel/PostgreSQL controls, and performs exploratory analysis across company KPIs, categories, regions, customer-name labels, monthly trends, and product margins. It exports five portfolio-ready charts covering category performance, monthly trends, regional profitability, top customer-name labels, and high-revenue/low-margin products.
 
 ## SQL Reproduction Order
 
@@ -90,11 +98,11 @@ Detailed import notes and expected outputs are documented in [`sql/README.md`](s
 ## Documentation
 
 - [`documentation/business_problem.md`](documentation/business_problem.md) — business context and KPI framework
-- [`documentation/methodology.md`](documentation/methodology.md) — completed and planned analytical workflow
-- [`documentation/findings.md`](documentation/findings.md) — validated Day 1 findings
-- [`documentation/executive_summary.md`](documentation/executive_summary.md) — current management summary
+- [`documentation/methodology.md`](documentation/methodology.md) — completed Day 1–2 workflow and planned Power BI phase
+- [`documentation/findings.md`](documentation/findings.md) — validated Excel, PostgreSQL, and Python findings
+- [`documentation/executive_summary.md`](documentation/executive_summary.md) — current management summary through Day 2
 - [`documentation/day1_validation_audit.md`](documentation/day1_validation_audit.md) — cross-tool quality-control audit
 
 ## Next Phase
 
-The Python phase will reproduce the SQL controls, perform deeper EDA/statistical analysis, evaluate distributions and outliers, and export portfolio-ready visualizations before the final Power BI dashboard is built.
+The next phase is the Power BI executive dashboard, including validated DAX measures, interactive filters, and final portfolio presentation work.

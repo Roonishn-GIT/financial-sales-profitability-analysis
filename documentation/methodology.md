@@ -59,15 +59,17 @@ The SQL analysis includes:
 - Regional contribution and ranking.
 - Calendar-month seasonality analysis.
 
-## 5. Python Analysis — Next Phase
+## 5. Python Analysis — Complete
 
-Python/Pandas will:
+The completed Python workflow follows a reproducible sequence:
 
-- Reproduce the validated controls.
-- Apply documented cleaning rules programmatically.
-- Perform descriptive statistics and EDA.
-- Examine distributions, outliers, correlations, and segment performance.
-- Export portfolio-ready visualizations.
+1. **Cleaning:** Normalize column names, parse dates, standardize the Central region, confirm numeric fields, and create derived profitability measures without changing the raw CSV.
+2. **Validation:** Check required fields, duplicates, regions, country, the revenue formula, dates, and exact Day 1 control totals.
+3. **Reconciliation:** Reproduce company, annual, category, and regional results from the Excel/PostgreSQL validation layer.
+4. **EDA:** Analyze overall KPIs, year-over-year results, categories, regions, customer-name labels, monthly trends, and product margins.
+5. **Visualization:** Export five portfolio-ready Matplotlib charts from the cleaned dataset.
+
+Profit margin is calculated as a weighted measure: total profit divided by total revenue. This avoids giving small and large transactions equal influence. Customer analysis groups the supplied `Customer_Name` label because no unique customer ID exists; results must not be interpreted as verified individual-customer identities.
 
 ## 6. Power BI — Planned
 
@@ -80,4 +82,4 @@ Power BI will provide the executive reporting layer with:
 
 ## 7. Recommendation Framework
 
-Recommendations will be tied to quantified evidence and will distinguish between revenue scale, absolute profit, and margin efficiency. Preliminary Day 1 recommendations are documented in `executive_summary.md`; final recommendations will incorporate the Python and Power BI phases.
+Recommendations will be tied to quantified evidence and will distinguish between revenue scale, absolute profit, and margin efficiency. The executive summary incorporates the validated Excel, PostgreSQL, and Python results; final recommendations will also incorporate the planned Power BI phase.

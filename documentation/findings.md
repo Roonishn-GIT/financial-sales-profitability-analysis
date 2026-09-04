@@ -1,6 +1,6 @@
 # Validated Findings
 
-The findings below were produced during Day 1 and reconciled across Excel and PostgreSQL where applicable.
+The findings below were produced during Day 1 and reconciled across Excel and PostgreSQL where applicable. Day 2 Python analysis independently reproduced the core controls and dimensional results.
 
 ## 1. Company-Level Performance
 
@@ -76,6 +76,19 @@ East leads revenue, but South has the strongest margin. This creates a useful co
 - Raw region value `Centre` is standardized to `Central` in the analytical table.
 - The raw CSV remains unchanged.
 
+## 8. Day 2 Python Confirmation
+
+Python independently reproduced the validated Day 1 findings:
+
+- 2024 delivered modest revenue and profit growth while weighted margin remained essentially flat.
+- Electronics generated the most category revenue but had the lowest category margin.
+- Home & Furniture generated the highest category profit.
+- Accessories had the highest category margin.
+- East led regional revenue, while South had the highest regional margin.
+- Every high-revenue product identified below the company-average margin was concentrated in Electronics, strengthening the conclusion that the low-margin pattern is category-wide rather than isolated to one product.
+
+The Python workflow also exported five charts covering category performance, monthly trends, regional profitability, top customer-name labels, and product margin positioning.
+
 ## Interpretation
 
-Day 1 establishes a reliable analytical foundation: company totals reconcile, dimensional totals roll back to the same company totals, and the SQL analytical layer reproduces the Excel findings while adding reusable ranking and time-series logic.
+Day 1 establishes a reliable analytical foundation, and Day 2 independently confirms it in Python: company totals reconcile, dimensional totals roll back to the same controls, and the combined workflow supports reusable profitability, ranking, trend, and product-margin analysis.

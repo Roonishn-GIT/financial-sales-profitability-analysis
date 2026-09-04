@@ -13,7 +13,7 @@
 - Excel workbook exists at `excel/financial_sales_analysis.xlsx`.
 - SQL setup, load, validation, KPI, customer, product, and trend scripts are present in `sql/`.
 - No Excel temporary lock file (`~$...`) is present in the repository.
-- Python and Power BI directories are intentionally incomplete because those phases have not started yet.
+- At the time of the Day 1 audit, the Python and Power BI phases had not started. Python Day 2 has since been completed and validated; Power BI remains planned.
 
 ## Database Load Verification
 
@@ -87,12 +87,12 @@ The SQL `LAG()` calculations were mathematically checked against the annual tota
 
 `01_database_setup.sql` intentionally contains `DROP` statements. It must only be run when intentionally rebuilding the database from scratch. Running it after importing `sales_stage` will delete the imported staging rows.
 
-## Remaining Work
+## Remaining Work at the End of Day 1
 
-The following are not errors; they are future project phases:
+The following were future phases when this Day 1 audit was completed:
 
-- Python/Pandas cleaning, EDA, statistics, and chart exports.
-- Cleaned-data export in `data/cleaned/`.
+- Python/Pandas cleaning, validation, EDA, and chart exports — **completed during Day 2**.
+- Cleaned-data export in `data/cleaned/` — **completed during Day 2**.
 - Power BI dashboard and DAX measures.
 - Final portfolio screenshots and fully finalized recommendations.
 
