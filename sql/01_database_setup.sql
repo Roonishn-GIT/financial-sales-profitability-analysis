@@ -1,7 +1,11 @@
 -- Project 1: Financial Sales & Profitability Analysis
 -- 01_database_setup.sql
 -- PostgreSQL schema setup for the validated 2023-2024 U.S. product sales dataset.
--- Run this entire script BEFORE importing the CSV into sales_stage.
+--
+-- DESTRUCTIVE SETUP SCRIPT:
+-- This file drops and recreates the project tables/view. Run it only when
+-- intentionally rebuilding the database from scratch, BEFORE importing the CSV.
+-- Do NOT rerun it after loading sales_stage unless you intend to delete/reload data.
 
 DROP VIEW IF EXISTS sales_enriched;
 DROP TABLE IF EXISTS sales_transactions;

@@ -1,8 +1,12 @@
 -- Project 1: Financial Sales & Profitability Analysis
 -- 01b_data_load.sql
 -- Run AFTER importing product_sales_dataset_final.csv into sales_stage.
+--
+-- Expected staging count: 200,000 rows.
+-- Run this load once per fresh database build. Because order_id is the primary key,
+-- rerunning the INSERT after a successful load will correctly raise duplicate-key errors.
 
--- Optional safety check: staging table should contain 200,000 rows.
+-- Safety check: staging table should contain 200,000 rows before the INSERT.
 SELECT COUNT(*) AS staging_row_count
 FROM sales_stage;
 
