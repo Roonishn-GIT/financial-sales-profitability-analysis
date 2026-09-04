@@ -66,7 +66,7 @@ East leads revenue, but South has the strongest margin. This creates a useful co
 - The monthly dataset is complete across 24 months from January 2023 through December 2024.
 - Month-over-month growth uses `LAG()`; the first month correctly returns `NULL` because no prior month exists.
 - Running revenue/profit totals and 3-month moving averages were implemented using window functions.
-- Calendar-month seasonality is aggregated across both years and will be explored further in Python.
+- Calendar-month seasonality remains documented in the SQL analysis; the Day 2 Python workflow focused on monthly performance and month-over-month trends.
 
 ## 7. Data Quality
 
