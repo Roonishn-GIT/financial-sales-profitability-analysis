@@ -1,8 +1,7 @@
 -- Project 1: Financial Sales & Profitability Analysis
 -- 01_database_setup.sql
--- PostgreSQL setup for the validated 2023-2024 U.S. product sales dataset.
-
--- Run inside the financial_sales_analysis database.
+-- PostgreSQL schema setup for the validated 2023-2024 U.S. product sales dataset.
+-- Run this entire script BEFORE importing the CSV into sales_stage.
 
 DROP VIEW IF EXISTS sales_enriched;
 DROP TABLE IF EXISTS sales_transactions;
@@ -44,40 +43,6 @@ CREATE TABLE sales_transactions (
     revenue         NUMERIC(14,2) NOT NULL CHECK (revenue >= 0),
     profit          NUMERIC(14,2) NOT NULL
 );
-
--- After importing the CSV into sales_stage, run this transformation.
-INSERT INTO sales_transactions (
-    order_id,
-    order_date,
-    customer_name,
-    city,
-    state,
-    region,
-    country,
-    category,
-    sub_category,
-    product_name,
-    quantity,
-    unit_price,
-    revenue,
-    profit
-)
-SELECT
-    order_id,
-    TO_DATE(order_date, 'MM-DD-YY'),
-    TRIM(customer_name),
-    TRIM(city),
-    TRIM(state),
-    CASE WHEN TRIM(region) = 'Centre' THEN 'Central' ELSE TRIM(region) END,
-    TRIM(country),
-    TRIM(category),
-    TRIM(sub_category),
-    TRIM(product_name),
-    quantity,
-    unit_price,
-    revenue,
-    profit
-FROM sales_stage;
 
 -- Reusable analytical view with derived KPIs and time dimensions.
 CREATE VIEW sales_enriched AS
